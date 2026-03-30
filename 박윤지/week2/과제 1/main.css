@@ -1,0 +1,85 @@
+/* 기본 박스 모델 초기화 */
+* {
+  margin : 0; /* 여백 제거하는 속성 */
+  padding : 0;  /* 내부 여백 제거하는 속성 */
+  box-sizing: border-box; 
+}
+
+body {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* vh (Viewport Height) 뷰포트 기준 % */
+  height: 100vh;
+}
+
+.calculator {
+  width: 287px;
+  border-radius: 5px;
+  background-color: #f0f3fa;
+  padding: 20px 10px;
+  /* x, y, blur, spread, 색&투명도 */
+  /* 속성값 4개: x, y, 흐림, color */
+  box-shadow: 0px 5px 10px rgba(6, 15, 65, 0.4);
+}
+
+
+.calculator form {
+  display: grid;
+  /* 동일한 크기로 열 4등분. 1fr 1fr 1fr 1fr 과 동일 */
+  grid-template-columns: repeat(4, 1fr);
+  /* 행, 즉 버튼 높이를 55px로 지정*/
+  /* auto: 알아서 자동으로 처리해줌 template: 명시적으로 지정 */
+  grid-auto-rows : 55px;
+  gap : 10px;
+}
+
+.calculator form input {
+  /* 지정한 요소 위에 마우스 커서가 올라갔을 때 표출할 모양 */
+  cursor: pointer;
+  font-size : 19px;
+  border-radius: 10px;
+  border: none; /* 또는 0 */
+  background-color: #d5deef;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+  /* property duration function delay(생략가능)*/
+  /* ease(기본 값): 느리게-빨라졌다가-느리게 */
+  transition: all 0.1s ease-in-out ;
+  outline : none;
+}
+
+/* :hover 선택자-마우스를 요소 위에 올렸을 때 적용 */
+.calculator form:hover {
+  box-shadow: 1px 1px 2px #696969;
+}
+
+/* 버튼 색상 및 크기 설정 */
+.calculator form .clear {
+  color: #ed4848;
+  grid-column: span 3;  /* span: 차지할 개수 지정 */
+}
+
+.calculator form .operator {
+  background-color: #395886;
+  color: white;
+}
+
+.calculator form .dot {
+  background-color: #628ecb;
+  color: white;
+}
+
+.calculator form input[type="text"] {
+  grid-column: span 4;
+  text-align: left;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 6px;
+  border: 1px, solid, #bbb;
+  background-color: #f9f9f9;
+}
+
+.calculator form .result {
+  grid-column: span 2;
+}
