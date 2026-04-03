@@ -24,8 +24,8 @@ body {
 
 .calculator form {
   display: grid; /* grid 선언 */
-  grid-template-columns: repeat(4,auto); /* 4열 균등 분배 */
-  grid-template-rows: repeat(6,55px); /* 버튼 높이 55px */
+  grid-template-columns: repeat(4,1fr); /* 4열 균등 분배 */
+  grid-auto-rows: 55px; /* 버튼 높이 55px */
   gap:10px; /* 버튼 간격 10px */
 }
 
@@ -49,7 +49,7 @@ body {
 /* 버튼 색상 및 크기 설정 */
 .calculator form .clear {
   color: #ed4848;
-  grid-column: 1/4; /* `C` 버튼이 현재 위치에서 3개의 열을 차지하도록 설정 */
+  grid-column: span 3; /* `C` 버튼이 현재 위치에서 3개의 열을 차지하도록 설정 */
 }
 
 .calculator form .operator {
