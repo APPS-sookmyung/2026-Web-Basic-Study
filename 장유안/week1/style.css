@@ -31,6 +31,7 @@ main {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
 }
 
 article {
@@ -45,13 +46,15 @@ article h2 {
 }
 
 article img {
-  max-height: 200px;
+  max-height: 300px;
 }
 
 article p,
 figcaption {
   color: #666666;
   line-height: 1.6;
+  margin-right: 20px;
+  margin-left: 10px;
 }
 
 footer {
