@@ -9,8 +9,8 @@ body {
   background-color: white;
   display: flex;
   justify-content:center; 
-  align-content:center; 
-  height: 60vh;
+  align-items:center; 
+  height: 100vh;
 }
 
 .calculator {
@@ -25,7 +25,7 @@ body {
 .calculator form {
   display: grid;
   grid-template-columns:repeat(4,1fr); 
-  height: 55px;
+  grid-auto-rows: 55px;
   gap: 10px; 
 }
 
