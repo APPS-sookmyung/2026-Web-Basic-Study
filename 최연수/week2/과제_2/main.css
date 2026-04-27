@@ -47,9 +47,6 @@ body {
 	transform: scale(1) skewX(-15deg);
 	/* 그 밖에 필요한 속성 추가 */
 	background-size: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	cursor: default;
 
 }
 
@@ -61,10 +58,20 @@ body {
 	z-index: 10;
 }
 
+.container .pokemons .pokemon .image {
+	width: 140%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 90px;
+	/* 그 밖에 필요한 속성 추가 */
+	transform: skewX(15deg);
+}
+
 
 /* :nth-child() 가상 클래스가 무엇인지 알아보고, 이를 적용하여 각 요소에 포켓몬 이미지 넣기 
 (32개의 반복된 코드가 필요하며, 이미지는 background-image 속성 이용하기) */
-.container .pokemons .pokemon:nth-child(1) { background-image: url(images/pokemon1.png); }
+.container .pokemons .pokemon:nth-child(1)  { background-image: url(images/pokemon1.png); }
 .container .pokemons .pokemon:nth-child(2) { background-image: url(images/pokemon2.png); }
 .container .pokemons .pokemon:nth-child(3) { background-image: url(images/pokemon3.png); }
 .container .pokemons .pokemon:nth-child(4) { background-image: url(images/pokemon4.png); }
