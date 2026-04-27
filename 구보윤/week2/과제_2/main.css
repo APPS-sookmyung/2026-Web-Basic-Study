@@ -1,6 +1,6 @@
 body {
 	height: 100vh;
-	background-image: url('images/background.jpeg'); /* 배경 이미지를 넣어주세요 */
+	background-image: url('images/background.jpeg'); 
 	background-color: #ff9c00;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -8,16 +8,15 @@ body {
 }
 
 .container {
-	padding: 50px 0; /* 내부 여백의 상하 50px, 좌우 0으로 설정하는 코드 작성해 주세요 */
+	padding: 50px 0; 
 }
 
 .container .pokemons {
 	display: flex;
 	flex-wrap: wrap;
-	flex-direction: row; /* 요소들의 메인 축을 가로로 설정하는 코드를 입력해 주세요 */
-	max-width: 800px; /* 요소의 최대 가로 크기를 700px로 설정해 주세요 */
-	padding: 40px 20px; /* 내부 여백에 상하 40px, 좌우 20px 적용해 주세요 */
-	/* 그 밖에 필요한 속성들 추가 */
+	flex-direction: row;
+	max-width: 700px; 
+	padding: 40px 20px; 
 	margin: 0 auto; 
 	justify-content: center;
 	gap: 15px
@@ -27,21 +26,17 @@ body {
 	box-sizing: border-box;
 	width: 80px;
 	height: 84px;
-	border: 3px solid white; /* 너비 80px, 높이 84px, 테두리를 3px 실선 하얀색으로 지정해 주는 코드를 각각 작성해 주세요 */
-	transition: all 0.5s ease; /* transition 속성을 적용해 주세요 */
-	transform: scale(1); /* transform 속성을 적용해 주세요 */
-	/* 그 밖에 필요한 속성 추가 */
+	border: 3px solid white; 
+	transition: all 0.5s ease;
+	transform: scale(1) skewX(-15deg);
 	background-color: #002b5b;
-	transform: skewX(-15deg);
 	border-radius: 15px;
 	overflow: hidden;
 }
 
-/* 마우스의 포인터를 각 요소에 올렸을 때 발생하는 효과를 적용하는 코드들 작성하기 (가상 선택자 활용) */
 .container .pokemons .pokemon:hover {
 	background-color: #ff9c00;
 	transform: scale(1.3) skewX(-15deg);
-	border-color: #fff;
 	z-index: 10;
 }
 
@@ -51,12 +46,8 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 90px;
-	/* 그 밖에 필요한 속성 추가 */
 	transform: skewX(15deg) translateX(-15%)
 	}
-
-/* :nth-child() 가상 클래스가 무엇인지 알아보고, 이를 적용하여 각 요소에 포켓몬 이미지 넣기 
-(32개의 반복된 코드가 필요하며, 이미지는 background-image 속성 이용하기) */
 
 .pokemon:nth-child(1) .image { background-image: url('images/pokemon1.png'); }
 .pokemon:nth-child(2) .image { background-image: url('images/pokemon2.png'); }
@@ -92,12 +83,10 @@ body {
 .pokemon:nth-child(32) .image { background-image: url('images/pokemon32.png'); }
 
 .container .logo {
-	max-width: 300px; /* 이미지 요소가 너무 크네요! 요소의 최대 가로 크기를 임의로 설정해 주세요 */
-	/* margin을 이용해서 요소를 가운데 정렬 해주세요  */
+	max-width: 300px; 
 	margin: 0 auto; 
-	display: block;
 }
 
 .container .logo img {
-	width: 100%; /* width를 이용해서 로고를 부모 요소의 최대 너비에 맞춰서 출력할 수 있는 코드 작성해 주세요 */
+	width: 100%; 
 }
