@@ -2,7 +2,6 @@ body {
 	height: 100vh;
 	/* 배경 이미지를 넣어주세요 */
 	background-image: url("images/background.jpeg");
-	background-color: #ff9c00;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -51,14 +50,13 @@ body {
 }
 
 .container .pokemons .pokemon .image {
-	width: 140%;
 	height: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 90px;
 	/* 그 밖에 필요한 속성 추가 */
 	transition: all 0.1s ease;
-	margin-left: -12%;
+	transform: skew(10deg);
 }
 
 /* :nth-child() 가상 클래스가 무엇인지 알아보고, 이를 적용하여 각 요소에 포켓몬 이미지 넣기 
