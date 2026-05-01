@@ -47,11 +47,11 @@ body {
 }
 
 .container .pokemons .pokemon .image {
-	width: 140%;
+	width: 100%;
 	height: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: cover;
 	display: inline-block;
 }
 .parallelogram-container {
