@@ -1,0 +1,113 @@
+body {
+	height: 100vh;
+	background-image: url('images/images/background.jpeg');/* 배경 이미지를 넣어주세요 */
+	background-color: #ff9c00;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.container {
+	padding: 50px 0;
+}
+
+.container .pokemons {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	max-width: 700px;
+	padding: 40px 20px;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.container .pokemons .pokemon {
+	box-sizing: border-box;
+	width: 80px;
+	height: 84px;
+	border: 3px solid white;
+	transition: transform 0.3s ease-in-out;
+	overflow: hidden;
+	margin: 10px;
+	background-color: gray;
+	transform: skew(-15deg);
+	border-radius: 10%;
+	cursor: pointer;
+}
+.container .pokemons .pokemon:hover {
+    transform: skew(-15deg) scale(1.1);
+    background-color: orange;
+}
+
+.container .pokemon .image :hover{
+	transform: skew(-15deg) scale(1.1); 
+    cursor: pointer;
+	background: orange;
+}
+
+.container .pokemons .pokemon .image {
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: inline-block;
+}
+.parallelogram-container {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  transform: skew(-15deg) scale(1.1); 
+  cursor: pointer;
+}
+
+
+/* :nth-child() 가상 클래스가 무엇인지 알아보고, 이를 적용하여 각 요소에 포켓몬 이미지 넣기 
+(32개의 반복된 코드가 필요하며, 이미지는 background-image 속성 이용하기) */
+.container .pokemons .pokemon:nth-child(1) .image{background-image: url('images/images/pokemon1.png')}
+.container .pokemons .pokemon:nth-child(2) .image{background-image: url('images/images/pokemon2.png')}
+.container .pokemons .pokemon:nth-child(3) .image{background-image: url('images/images/pokemon3.png')}
+.container .pokemons .pokemon:nth-child(4) .image{background-image: url('images/images/pokemon4.png')}
+.container .pokemons .pokemon:nth-child(5) .image{background-image: url('images/images/pokemon5.png')}
+.container .pokemons .pokemon:nth-child(6) .image{background-image: url('images/images/pokemon6.png')}
+.container .pokemons .pokemon:nth-child(7) .image{background-image: url('images/images/pokemon7.png')}
+.container .pokemons .pokemon:nth-child(8) .image{background-image: url('images/images/pokemon8.png')}
+.container .pokemons .pokemon:nth-child(9) .image{background-image: url('images/images/pokemon9.png')}
+.container .pokemons .pokemon:nth-child(10) .image{background-image: url('images/images/pokemon10.png')}
+.container .pokemons .pokemon:nth-child(11) .image{background-image: url('images/images/pokemon11.png')}
+.container .pokemons .pokemon:nth-child(12) .image{background-image: url('images/images/pokemon12.png')}
+.container .pokemons .pokemon:nth-child(13) .image{background-image: url('images/images/pokemon13.png')}
+.container .pokemons .pokemon:nth-child(14) .image{background-image: url('images/images/pokemon14.png')}
+.container .pokemons .pokemon:nth-child(15) .image{background-image: url('images/images/pokemon15.png')}
+.container .pokemons .pokemon:nth-child(16) .image{background-image: url('images/images/pokemon16.png')}
+.container .pokemons .pokemon:nth-child(17) .image{background-image: url('images/images/pokemon17.png')}
+.container .pokemons .pokemon:nth-child(18) .image{background-image: url('images/images/pokemon18.png')}
+.container .pokemons .pokemon:nth-child(19) .image{background-image: url('images/images/pokemon19.png')}
+.container .pokemons .pokemon:nth-child(20) .image{background-image: url('images/images/pokemon20.png')}
+.container .pokemons .pokemon:nth-child(21) .image{background-image: url('images/images/pokemon21.png')}
+.container .pokemons .pokemon:nth-child(22) .image{background-image: url('images/images/pokemon22.png')}
+.container .pokemons .pokemon:nth-child(23) .image{background-image: url('images/images/pokemon23.png')}
+.container .pokemons .pokemon:nth-child(24) .image{background-image: url('images/images/pokemon24.png')}
+.container .pokemons .pokemon:nth-child(25) .image{background-image: url('images/images/pokemon25.png')}
+.container .pokemons .pokemon:nth-child(26) .image{background-image: url('images/images/pokemon26.png')}
+.container .pokemons .pokemon:nth-child(27) .image{background-image: url('images/images/pokemon27.png')}
+.container .pokemons .pokemon:nth-child(28) .image{background-image: url('images/images/pokemon28.png')}
+.container .pokemons .pokemon:nth-child(29) .image{background-image: url('images/images/pokemon29.png')}
+.container .pokemons .pokemon:nth-child(30) .image{background-image: url('images/images/pokemon30.png')}
+.container .pokemons .pokemon:nth-child(31) .image{background-image: url('images/images/pokemon31.png')}
+.container .pokemons .pokemon:nth-child(32) .image{background-image: url('images/images/pokemon32.png')}
+
+
+
+.container .logo {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.container .logo img {
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+	display: block;/* width를 이용해서 로고를 부모 요소의 최대 너비에 맞춰서 출력할 수 있는 코드 작성해 주세요 */
+}
