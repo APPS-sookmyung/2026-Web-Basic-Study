@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.key >= "0" && event.key <= "9") {
       output.value += event.key; 
     }
+    
+    event.preventDefault();
 
     if (["+", "-", "*", "/"].includes(event.key)) {
 
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         output.value === "" || 
         lastChar === "." || 
         output.value
-          .splict(/[\+\-\*\/]/) 
+          .split(/[\+\-\*\/]/) 
           .pop() 
           .includes(".") 
       ) {
