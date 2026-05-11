@@ -22,19 +22,19 @@ function MoviePage() {
         <img src={movie.posterImgUrl} alt={movie.title} />
       </div>
 
-      {/* 하단: 영화 상세 정보 */}
+      
       <div className="detail-content">
         <h1>{movie.title}</h1>
         <p className="detail-subtitle">{movie.subTitle}</p>
 
-        // 영화 장르 정보 - map 이용
+        
         <div className="detail-genres">
           {movie.genres.map((genre, index) => (
             <span key={index}>{genre}</span>
           ))}
         </div>
 
-        // 영화 description 정보
+        
         <div className="detail-summary">
           <p>{movie.description}</p>
         </div>

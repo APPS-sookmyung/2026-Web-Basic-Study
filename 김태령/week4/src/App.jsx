@@ -10,7 +10,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        {/* 동적 라우팅 */}
+        
         <Route path="/movie/:id" element={<MoviePage />} />
       </Routes>
     </BrowserRouter>

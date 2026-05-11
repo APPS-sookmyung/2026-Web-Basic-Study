@@ -11,7 +11,7 @@ function Header() {
           marginBottom: "40px",
         }}
       >
-        {/* 로고 클릭 시 메인으로 이동 */}
+      
         <h1 className="logo">
           <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
             🎬 Movie Log
