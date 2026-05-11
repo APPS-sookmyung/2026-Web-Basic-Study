@@ -51,7 +51,7 @@ async function fetchFacts(count = 1) {
   //  1. 사용자가 선택한 언어(language) 가져오기
   const lang = document.getElementById("language").value;
   //  2. API 요청 URL 생성!!!! 힌트: const url='$_?_= $_&_=$_'
-  const url = 'https://meowfacts.herokuapp.com/?count=${count}&lang;
+  const url = `https://meowfacts.herokuapp.com/?count=${count}&lang={lang}`;
 
   try {
     //  3. 로딩 상태 표시
@@ -66,10 +66,7 @@ async function fetchFacts(count = 1) {
     return data.data;
 
   } catch (err) {
-    console.error("에러 발생:", err.message);
-  } finally {
-    hideLoading();
-  }
+    showError(err.message);
 }
 
 /* #2: 이벤트 리스너 추가 (버튼 클릭 시 API 요청 및 결과 표시)
@@ -86,7 +83,7 @@ getFactBtn.addEventListener("click", async () => {
 getMultipleBtn.addEventListener("click", async () => {
   const count = parseInt(factCount.value) || 1;
   if (count <1 || count > 5) {
-    alert("Please enter a number between 1 and 5");
+    showError("Please enter a number between 1 and 5");
     return;
   }
   const facts = await fetchFacts(count);
@@ -99,3 +96,4 @@ getMultipleBtn.addEventListener("click", async () => {
 window.addEventListener("load", () => {
   getFactBtn.click();
 });
+}

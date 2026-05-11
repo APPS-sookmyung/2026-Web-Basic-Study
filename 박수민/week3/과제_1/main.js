@@ -1,10 +1,10 @@
 // HTML 문서가 완전히 로드된 후 실행
 document.addEventListener("DOMContentLoaded", function () {
-  const output = document.???("input[name='output']"); // 계산 결과가 표시될 입력창 선택
+  const output = document.querySelector("input[name='output']"); // 계산 결과가 표시될 입력창 선택
 
   // 키보드 입력 이벤트 등록
   document.addEventListener("keydown", function (event) {
-    const lastChar = output.value.???(-1); // 현재 입력값의 마지막 문자 가져오기
+    const lastChar = output.value.slice(-1); // 현재 입력값의 마지막 문자 가져오기
 
     // 숫자 키 입력 (0~9)
     if (event.key >= "0" && event.key <= "9") {
