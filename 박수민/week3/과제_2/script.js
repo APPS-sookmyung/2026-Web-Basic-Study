@@ -49,10 +49,9 @@ function displayFacts(facts) {
 // #1: API 호출 함수 구현 (비동기 처리 + fetch 사용)
 async function fetchFacts(count = 1) {
   //  1. 사용자가 선택한 언어(language) 가져오기
-  const lang = document.getElementById("language").value;
+  const lang = languageSelect.value;
   //  2. API 요청 URL 생성!!!! 힌트: const url='$_?_= $_&_=$_'
-  const url = `https://meowfacts.herokuapp.com/?count=${count}&lang={lang}`;
-
+  const url = `${API_URL}/?count=${count}&lang=${lang}`;
   try {
     //  3. 로딩 상태 표시
     showLoading();
@@ -67,6 +66,7 @@ async function fetchFacts(count = 1) {
 
   } catch (err) {
     showError(err.message);
+}
 }
 
 /* #2: 이벤트 리스너 추가 (버튼 클릭 시 API 요청 및 결과 표시)
@@ -96,4 +96,3 @@ getMultipleBtn.addEventListener("click", async () => {
 window.addEventListener("load", () => {
   getFactBtn.click();
 });
-}
