@@ -49,15 +49,12 @@ async function fetchFacts(count = 1) {
     showLoading();
 
     const response = await fetch(url);
-    if (!response.ok) {
-      showError("Failed to fetch cat facts");
-      hideLoading();
-      return;
-    }
+    if (!response.ok) throw new Error("Failed to fetch cat facts");
+
     const data = await response.json();
-    displayFacts(data.data);
+    return data.data;
   } catch (err) {
-    showError("Failed to fetch cat facts");
+    showError(err.message);
     return null;
   } finally {
     hideLoading();
@@ -72,7 +69,7 @@ getFactBtn.addEventListener("click", async () => {
 });
 
 getMultipleBtn.addEventListener("click", async () => {
-  let count = parseInt(factCount.value) || 1;
+  const count = parseInt(factCount.value) || 1;
   if (count < 1 || count > 5) {
     showError("Please enter a number between 1 and 5");
     return;
