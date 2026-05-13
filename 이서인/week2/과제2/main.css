@@ -1,0 +1,75 @@
+body {
+    height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1613771404721-1f92d799e49f?auto=format&fit=crop&w=1350&q=80");
+    background-color: #ff9c00;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    padding: 50px 0;
+    width: 100%;
+}
+
+.container .pokemons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 700px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.container .pokemons .pokemon {
+    box-sizing: border-box;
+    width: 80px;
+    height: 84px;
+    border: 3px solid white;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    margin: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .pokemons .pokemon:hover {
+    transform: scale(1.15);
+    background-color: white;
+    z-index: 10;
+}
+
+.container .pokemons .pokemon .image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.container .pokemons .pokemon:nth-child(1) .image { background-image: url("./images/p1.png"); }
+.container .pokemons .pokemon:nth-child(2) .image { background-image: url("./images/p2.png"); }
+.container .pokemons .pokemon:nth-child(3) .image { background-image: url("./images/p3.png"); }
+.container .pokemons .pokemon:nth-child(4) .image { background-image: url("./images/p4.png"); }
+.container .pokemons .pokemon:nth-child(5) .image { background-image: url("./images/p5.png"); }
+.container .pokemons .pokemon:nth-child(6) .image { background-image: url("./images/p6.png"); }
+.container .pokemons .pokemon:nth-child(7) .image { background-image: url("./images/p7.png"); }
+.container .pokemons .pokemon:nth-child(8) .image { background-image: url("./images/p8.png"); }
+.container .pokemons .pokemon:nth-child(9) .image { background-image: url("./images/p9.png"); }
+
+.container .logo {
+    max-width: 300px;
+    margin: 30px auto;
+}
+
+.container .logo img {
+    width: 100%;
+    display: block;
+}
