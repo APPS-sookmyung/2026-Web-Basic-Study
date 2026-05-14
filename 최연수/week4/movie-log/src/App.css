@@ -1,0 +1,119 @@
+/* 전체 배경 및 폰트 설정 */
+body {
+  background-color: #f0f2f5;
+  font-family:
+    "Pretendard",
+    -apple-system,
+    sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* 기본 설정 (모바일): 1줄 */
+.movie-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+}
+
+/* 태블릿 (768px 이상): 2줄 */
+@media (min-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 데스크탑 (1024px 이상): 3줄 */
+@media (min-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 영화 카드 스타일 */
+.movie-card {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px 20px 12px 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 포스터 이미지 설정 */
+.poster-container {
+  flex-shrink: 0;
+}
+
+.poster-container img {
+  width: 140px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: -30px;
+}
+
+/* 영화 상세 정보 설정 */
+.movie-info {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-info h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700; /*굵게*/
+  color: #1a1a1a;
+}
+
+.subtitle {
+  margin: 5px 0;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* 장르 리스트 스타일 */
+.genres {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.genres li {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.genres li:not(:last-child)::after {
+  content: "•";
+  margin-left: 8px;
+}
+
+/* 설명 텍스트 */
+.description {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
