@@ -8,7 +8,7 @@ function MainPage() {
         
         {
           movieData.map((item) => (
-          <Movie movie={item} />
+          <Movie key={item.id} movie={item} />
         ))         
         }
       </div>
