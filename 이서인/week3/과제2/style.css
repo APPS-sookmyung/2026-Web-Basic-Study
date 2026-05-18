@@ -1,54 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f2f5;
-    font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 450px;
-    width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 400px;
 }
 
 h1 {
-    font-size: 24px;
-    color: #333333;
-    margin-bottom: 20px;
+  color: #333333;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
 #factArea {
-    min-height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f9f9f9;
-    border: 1px solid #e3e3e3;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 20px;
-    color: #555555;
-    line-height: 1.5;
-    font-size: 16px;
+  background-color: #f9fbfd;
+  border: 2px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 #getFactBtn {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  font-weight: bold;
 }
 
 #getFactBtn:hover {
-    background-color: #45a049;
+  background-color: #1d4ed8;
 }
