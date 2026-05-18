@@ -1,26 +1,14 @@
+const factArea = document.getElementById("factArea");
+const getFactBtn = document.getElementById("getFactBtn");
+
 getFactBtn.addEventListener("click", async () => {
-  const facts = await fetchFacts(1);
-  if (facts) {
-    displayFacts(facts[0]);
-  }
-});
-
-getMultipleBtn.addEventListener("click", async () => {
-  const count = parseInt(factCount.value) || 1;
-
-  if (count < 1 || count > 5) {
-    return;
-  }
-
-  try {
-    showLoading();
-    const facts = await fetchFacts(count);
-    if (facts) {
-      displayMultipleFacts(facts);
+    try {
+        factArea.innerText = "Loading...";
+        const response = await fetch("https://catfact.ninja/fact");
+        const data = await response.json();
+        factArea.innerText = data.fact;
+    } catch (error) {
+        factArea.innerText = "고양이 정보를 불러오는 데 실패했습니다.";
+        console.error(error);
     }
-  } catch (err) {
-    showError(err.message);
-  } finally {
-    hideLoading();
-  }
 });
