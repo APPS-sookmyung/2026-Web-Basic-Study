@@ -31,12 +31,12 @@ export default function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        {/* MainPage에 전체 영화 데이터와 토글 함수를 넘겨줍니다. */}
+        
         <Route
           path="/"
           element={<MainPage movies={movies} onToggle={toggleHeart} />}
         />
-        {/* FavoritePage에는 '좋아요'한 영화만 걸러서(filter) 넘겨줍니다. */}
+        
         <Route
           path="/favorites"
           element={
@@ -46,13 +46,12 @@ export default function App() {
             />
           }
         />
-        {/* 동적 라우팅 */}
+        
         <Route
           path="/movie/:id"
           element={<MoviePage movies={movies} onToggle={toggleHeart} />}
         />
-        {/* ⭐ 영화 추가 라우트 추가 및 Props 전달 */}
-        {/* 영화 추가 페이지를 위한 동적 라우팅을 작성해 봅시다. 주소 경로는 '/add'로 설정합니다. */}
+        
         <Route
           path="/add"
           element={<AddMoviePage movies={movies} setMovies={setMovies} />}
