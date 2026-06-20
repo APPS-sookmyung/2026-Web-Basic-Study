@@ -14,7 +14,7 @@
   padding: 0 20px;
 }
 
-/* 중앙 로고 */
+
 .logo {
   margin: 0;
 }
@@ -25,7 +25,7 @@
   padding-bottom: 10px;
 }
 
-/* 우측 버튼 그룹 컨테이너 (정렬 속성 이관) */
+
 .fav-page-btn {
   position: absolute;
   right: 20px;
@@ -34,7 +34,7 @@
   gap: 20px;
 }
 
-/* ⭐ 영화 추가 링크 버튼 스타일 */
+
 .add-movie-link {
   text-decoration: none;
   color: #444444;
@@ -53,7 +53,7 @@
   border-color: #1a1a1a;
 }
 
-/* 즐겨찾기 아이콘 링크 래퍼 */
+
 .favorite-icon-link {
   display: flex;
   align-items: center;
