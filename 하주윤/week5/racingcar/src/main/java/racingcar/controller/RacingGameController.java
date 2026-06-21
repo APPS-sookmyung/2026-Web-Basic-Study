@@ -39,10 +39,6 @@ public class RacingGameController {
 
     private void playRound(List<Car> cars) {
         for (Car car : cars) {
-<<<<<<< HEAD
-=======
-            // [과제: 02단원 - 다형성을 이용해 자동차를 전진시킵니다. 인터페이스의 추상 메서드를 호출해 보세요]
->>>>>>> 20acf4edf1b9b54dd394d3b9077fb77742035fd9
             car.move(numberGenerator.generate());
             OutputView.printCarState(car);
         }
