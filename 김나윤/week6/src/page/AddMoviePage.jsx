@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AddMoviePage.css"; // CSS 파일 로드
+import "./AddMoviePage.css"; 
 
 function AddMoviePage({ movies, setMovies }) {
     const navigate = useNavigate();
 
-    // 1. 5가지 입력 필드를 하나의 객체 상태로 관리하기
     const [formData, setFormData] = useState({
         title: "",
         subTitle: "",
@@ -14,29 +13,23 @@ function AddMoviePage({ movies, setMovies }) {
         posterImgUrl: "",
     });
 
-    // 2. 입력 창의 값이 바뀔 때 실행될 핸들러 함수
     const handleChange = (e) => {
         const { name, value } = e.target;
-        // formData 객체의 불변성을 지키며 값이 변경된 key만 갱신하는 코드를 작성해 봅시다.
-        /* 이곳에 코드를 작성하세요! */
         setFormData((prevData) => ({
             ...prevData,
             [name]: value,
         }));
     };
 
-    // 3. 새로운 영화 등록 핸들러 함수
     const handleSubmit = (e) => {
-        e.preventDefault(); // 페이지 새로고침 방지
-
-        // 예외 처리: 필수 항목 검사
+        e.preventDefault(); 
+        
         if (!formData.title || !formData.posterImgUrl) {
             alert("영화 제목과 사진 URL은 필수 입력 항목입니다!");
             return;
         }
 
-        // 새로운 영화 객체 생성 (기존 dummy.json 구조와 일치화)
-        // 기존 dummy.json의 데이터 구조와 똑같은 형태의 새로운 영화 객체(newMovie)를 완성해 봅시다.
+        
         const newMovie = {
             id: movies.length + 1, 
             title: formData.title,
@@ -44,15 +37,14 @@ function AddMoviePage({ movies, setMovies }) {
             description: formData.description,
             genres: formData.genres ? formData.genres.split(",").map((g) => g.trim()) : ["기타"],
             posterImgUrl: formData.posterImgUrl,
-            isLiked: false, // 새로 등록된 영화의 하트 초기 상태
+            isLiked: false, 
         };
 
-        // 부모 상태 배열에 새 데이터 추가
-        // 부모에게 상속받은 setMovies 함수를 활용하여 기존 영화 목록 배열 뒤에 새 영화(newMovie)를 추가해 봅시다.
+       
         setMovies([...movies, newMovie]);
 
         alert("🎬 새로운 영화가 성공적으로 등록되었습니다!");
-        navigate("/"); // 등록 완료 후 메인 화면으로 리다이렉트
+        navigate("/"); 
     };
 
     return (
