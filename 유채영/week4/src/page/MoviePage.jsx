@@ -22,8 +22,8 @@ function MoviePage() {
         <p className="detail-subtitle">{movie.subTitle}</p>
 
         <div className="detail-genres">
-          {movie.genres.map((index) => (
-            <span key={index}>{index}</span>
+          {movie.genres.map((genre, index) => (
+            <span key={index}>{genre}</span>
           ))}
         </div>
 
