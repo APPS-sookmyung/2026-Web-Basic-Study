@@ -1,0 +1,25 @@
+POST http://localhost:8080/todo
+Content-Type: application/json
+
+{
+  "date": "6.28",
+  "content": "BS 과제하기"
+}
+
+###
+GET http://localhost:8080/todo
+
+###
+GET http://localhost:8080/todo/1
+
+###
+PUT http://localhost:8080/todo/1
+Content-Type: application/json
+
+{
+  "date": "6.29",
+  "content": "책 읽기"
+}
+
+###
+DELETE http://localhost:8080/todo/1
