@@ -15,7 +15,7 @@ export default function App() {
     movieData.map((movie) => ({ ...movie, isLiked: false })),
   );
 
-  // ⭐ 검색어 상태 추가
+
   const [searchTerm, setSearchTerm] = useState("");
 
   // 2. 하트를 누를 때 실행될 함수 (상태 변경 로직)
@@ -28,7 +28,7 @@ export default function App() {
     );
   };
 
-  // ⭐ 3. 영화 삭제 함수
+
   const deleteMovie = (id) => {
     // 확인 창을 띄워 사용자에게 재확인 받습니다.
     if (window.confirm("정말로 이 영화를 삭제하시겠습니까?")) {
@@ -36,13 +36,11 @@ export default function App() {
     }
   };
 
-  // ⭐ 4. 검색어 변경 핸들러
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  // ⭐ 5. 검색어에 따라 필터링된 영화 목록
-  // 검색어가 있으면 제목에 검색어가 포함된 영화만 필터링하고, 없으면 전체 영화를 보여줍니다.
+
   const filteredMovies = movies.filter((movie) =>
     movie.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -50,10 +48,10 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      {/* ⭐ Header에 검색 핸들러를 prop으로 전달합니다. */}
-      <Header onSearch={setSearchTerm} />
+ 
+      <Header onSearch={handleSearch} />
       <Routes>
-        {/* ⭐ MainPage에 필터링된 영화 목록과 기능 함수들을 넘겨줍니다. */}
+
         <Route
           path="/"
           element={

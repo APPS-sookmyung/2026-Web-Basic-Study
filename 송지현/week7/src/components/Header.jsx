@@ -16,7 +16,6 @@ function Header({ onSearch }) {
 
         {/* 우측 즐겨찾기 버튼 */}
         <div className="fav-page-btn">
-          {/* ⭐ 영화 등록 페이지 이동 버튼 */}
           <Link to="/add" className="add-movie-link">
             ➕ 영화 추가
           </Link>

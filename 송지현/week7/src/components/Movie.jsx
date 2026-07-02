@@ -31,7 +31,6 @@ function Movie({ movie, onToggle, onDelete }) {
             <img src={movie.isLiked ? heart : heartOutline} />
           </button>
 
-          {/* ⭐ 삭제 버튼: 이벤트 버블링을 막아 페이지 이동을 방지합니다. */}
           <button
             className="delete-btn"
             onClick={(e) => {
