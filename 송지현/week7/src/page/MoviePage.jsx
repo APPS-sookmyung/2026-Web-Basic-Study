@@ -19,7 +19,6 @@ function MoviePage({ movies, onToggle, onDelete }) {
     return <div className="error">영화를 찾을 수 없습니다.</div>;
   }
 
-  // ⭐ 삭제 버튼 클릭 핸들러
   const handleDelete = () => {
     onDelete(movie.id);
     navigate("/"); // 삭제 후 메인 페이지로 이동
@@ -37,7 +36,6 @@ function MoviePage({ movies, onToggle, onDelete }) {
         <div>
           <div className="detail-title-container">
             <h1>{movie.title}</h1>
-            {/* ⭐ 삭제 버튼 추가 */}
             <button className="delete-btn-detail" onClick={() => onDelete(movie.id)}>
               <img src={deleteIcon} alt="삭제" />
             </button>

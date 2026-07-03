@@ -36,7 +36,7 @@ function Header({ onSearch }) {
           <input
             type="text"
             placeholder="영화 제목 검색..."
-            onChange={(e) => onSearch(e.target.value)} 
+            onChange={onSearch} 
           />
         </div>
       </div>
