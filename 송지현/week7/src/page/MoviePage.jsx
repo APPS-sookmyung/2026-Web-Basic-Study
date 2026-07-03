@@ -36,7 +36,7 @@ function MoviePage({ movies, onToggle, onDelete }) {
         <div>
           <div className="detail-title-container">
             <h1>{movie.title}</h1>
-            <button className="delete-btn-detail" onClick={() => onDelete(movie.id)}>
+            <button className="delete-btn-detail" onClick={handleDelete}>
               <img src={deleteIcon} alt="삭제" />
             </button>
           </div>
