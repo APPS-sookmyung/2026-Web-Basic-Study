@@ -1,9 +1,14 @@
 package com.example.demo.controller;
 
 import com.example.demo.domain.Post;
+import com.example.demo.dto.PostResponseDto;
 import com.example.demo.service.PostService;
+import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/posts")
@@ -16,28 +21,34 @@ public class PostController {
     }
 
     @PostMapping
-    public Post create(@RequestBody Post post) {
-        return postService.savePost(post);
+    public ResponseEntity<PostResponseDto> create(@Valid @RequestBody Post post) {
+        Post savedPost = postService.savePost(post);
+        return ResponseEntity.ok(PostResponseDto.from(savedPost));
     }
 
     @GetMapping
-    public List<Post> findAll() {
-        return postService.findPosts();
+    public ResponseEntity<List<PostResponseDto>> findAll() {
+        List<PostResponseDto> posts = postService.findPosts().stream()
+                .map(PostResponseDto::from)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(posts);
     }
 
     @GetMapping("/{id}")
-    public Post findOne(@PathVariable Long id) {
-        return postService.findOne(id);
+    public ResponseEntity<PostResponseDto> findOne(@PathVariable Long id) {
+        Post post = postService.findOne(id);
+        return ResponseEntity.ok(PostResponseDto.from(post));
     }
 
     @PutMapping("/{id}")
-    public Post update(@PathVariable Long id, @RequestBody Post post) {
-        return postService.update(id, post);
+    public ResponseEntity<PostResponseDto> update(@PathVariable Long id, @Valid @RequestBody Post post) {
+        Post updatedPost = postService.update(id, post);
+        return ResponseEntity.ok(PostResponseDto.from(updatedPost));
     }
 
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable Long id) {
+    public ResponseEntity<String> delete(@PathVariable Long id) {
         postService.delete(id);
-        return "삭제 완료: id=" + id;
+        return ResponseEntity.ok("삭제 완료: id=" + id);
     }
 }
