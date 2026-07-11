@@ -1,6 +1,8 @@
 package com.example.todo.service;
 
 import com.example.todo.domain.Todo;
+import com.example.todo.dto.TodoRequestDto;
+import com.example.todo.dto.TodoResponseDto;
 import com.example.todo.repository.TodoRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +18,13 @@ public class TodoService {
         this.todoRepository = todoRepository;
     }
 
-    public Todo join(Todo todo) {
-        return todoRepository.save(todo);
+    public TodoResponseDto join(TodoRequestDto requestDto) {
+        Todo todo = new Todo(requestDto.getDate(), requestDto.getContent());
+        Todo savedTodo = todoRepository.save(todo);
+        return TodoResponseDto.from(savedTodo);
     }
 
-    public List<Todo> findTodo() {
-        return todoRepository.findAll();
+    public List<Todo> findTodo() {return todoRepository.findAll();
     }
 
     public Todo findOne(Long id) {
